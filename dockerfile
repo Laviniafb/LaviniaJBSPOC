@@ -7,7 +7,7 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
 
-COPY --from=Build /target/spring-boot-starter-parent-3.1.3=-SNAPSHOT.jar app.jar
+COPY --from=Build /target/JBS-0.1.jar app.jar
 
 EXPOSE 8080
 ENTRYPOINT [ "java", "-jar", "app.jar" ]
